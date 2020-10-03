@@ -1,0 +1,22 @@
+os: linux
+dist: xeinal
+language: node_js
+node_js:
+  - node
+cache:
+  yarn: true
+  directories:
+    - "node_modules"
+install:
+  - yarn
+before_deploy:
+  - yarn build
+deploy:
+  strategy: git
+  provider: pages
+  skip_cleanup: true
+  token: $GITHUB_TOKEN
+  local_dir: packages/@logossim/page/build
+  verbose: true
+  on:
+    branch: master

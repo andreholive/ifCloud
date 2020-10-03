@@ -1,0 +1,26 @@
+.mainLight-off{
+    fill: red;
+}
+.mainLight-work{
+	animation: color_change 1s infinite alternate;
+}
+.mainLight-on{
+    fill: #38FF00;
+}
+@keyframes color_change {
+	from { fill: blue; }
+	to { fill: red; }
+}
+@-webkit-keyframes color_change {
+	from { fill: blue; }
+	to { fill: red; }
+}
+@-moz-keyframes color_change {
+	from { fill: blue; }
+	to { fill: red; }
+}
+.portsSwitch8 {
+    position: absolute;
+    top: 27px;
+    left: 48px;
+}

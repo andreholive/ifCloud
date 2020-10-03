@@ -1,0 +1,319 @@
+.diagram{
+  background-color: var(--background);
+  
+  background-position-x: var(--offset-x);
+  background-position-y: var(--offset-y);
+
+  background-size: calc(var(--grid-size) * 3)
+                   calc(var(--grid-size) * 3);
+
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJYAAACWCAYAAAA8AXHiAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAOnAAADpwBB5RT3QAAABZ0RVh0Q3JlYXRpb24gVGltZQAwMy8yMi8yMM3KBJQAAAAcdEVYdFNvZnR3YXJlAEFkb2JlIEZpcmV3b3JrcyBDUzbovLKMAAAB7ElEQVR4nO3dUW1CQRRF0TsNMjDQb3Ripg4QUBf4eBUBO49O1lJwbrKT+Zw1Mz8z85j/7zozz7NHvMEWd1xm5nEcx/3sIa9aa92O4/g9e8erdrnj6+wB7ElYJIRFQlgkhEVCWCSERUJYJIRFQlgkhEVCWCSERUJYJIRFQlgkhEVCWCSERUJYJIRFQlgkhEVCWCSERUJYJIRFQlgkhEVCWCSERUJYJIRFQlgkhEVCWCSERUJYJIRFQlgkhEVCWCSERUJYJIRFQlgkhEVCWCQuM3Nda93OHvIG32utsze8wxZ3XGbmucOPnmutccfn8BSSEBYJYZEQFglhkRAWCWGREBYJYZEQFglhkRAWCWGREBYJYZEQFglhkRAWCWGREBYJYZEQFglhkRAWCWGREBYJYZEQFglhkRAWCWGREBYJYZEQFglhkRAWCWGREBYJYZEQFglhkRAWCWGREBYJYZEQFglhkRAWCT+sfp4t7vDD6ofZ5Q5PIQlhkRAWCWGREBYJYZEQFglhkRAWCWGREBYJYZEQFglhkRAWCWGREBYJYZEQFglhkRAWCWGREBYJYZEQFglhkRAWCWGREBYJYZEQFglhkRAWCWGREBYJYZEQFglhkRAWCWGREBYJYZEQFglhkRAWCWGREBYJYZH4A5/pKth/6zgKAAAAAElFTkSuQmCC');
+
+  margin: 0;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+}
+
+.locked{
+  opacity: 0.5;
+}
+
+.unlocked{
+  opacity: 1m ;
+}
+
+body {
+  
+
+  /* Variables */
+  --offset-x: 0px;
+  --offset-y: 0px;
+  --grid-size: 15px;
+
+  --background: #eee;
+
+  --link-unselected: #069206;
+  --link-selected: #13e613;
+  --link-width: 3;
+
+  --value-on: #13e613;
+  --value-off: #069206;
+  --value-error: #c80a0a;
+
+  --port-unconnected: #ddd;
+  --port-hover: var(--link-selected);
+  --port-connected-border: #069206;
+  --port-unconnected-border: #333;
+  --port-width: 2px;
+
+  --border-selected: rgba(115, 190, 255, 0.5);;
+  --border-unselected: #000;
+  --border-width: 2;
+
+  --body-unselected: rgba(115, 190, 255, 0.95);
+  --body-selected: rgba(115, 190, 255, 0.5);
+  --onToOff: onToOff 0.5s infinite alternate;
+  --offToON: offToON 0.5s infinite alternate;
+}
+
+@keyframes onToOff {
+from { background-color: #13e613; }
+to { background-color: #fc8b00; }
+}
+@-webkit-keyframes onToOff {
+  from { background-color: #13e613; }
+  to { background-color: #fc8b00; }
+}
+@-moz-keyframes onToOff {
+  from { background-color: #13e613; }
+  to { background-color: #fc8b00; }
+}
+
+@keyframes offToON {
+  from { background-color: #c80a0a; }
+  to { background-color: #fc8b00; }
+  }
+@-webkit-keyframes offToON {
+    from { background-color: #c80a0a; }
+    to { background-color: #fc8b00; }
+  }
+@-moz-keyframes offToON {
+    from { background-color: #c80a0a; }
+    to { background-color: #fc8b00; }
+  }
+
+* {
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.react-contexify__item__content {
+  display: flex;
+  align-items: center;
+}
+.logo{
+  width: 100%;
+  -webkit-user-drag: none;
+}
+.react-contexify {
+  z-index: 5;
+}
+
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -64.5px;
+  margin-top: -85.5px;
+}
+
+.ghost {
+  animation: float 3s ease-out infinite;
+}
+
+@keyframes float {
+  50% {
+     transform: translate(0, 20px);
+  }
+}
+.shadowFrame {
+  width: 130px;
+  margin-top: 15px;
+}
+.shadow {
+  animation: shrink 3s ease-out infinite;
+  transform-origin: center center;
+  ellipse {
+    transform-origin: center center;
+  }
+}
+
+@keyframes shrink {
+  0% {
+    width: 90%;
+    margin: 0 5%;
+  }
+  50% {
+    width: 60%;
+    margin: 0 18%;
+  }
+  100% {
+    width: 90%;
+    margin: 0 5%;
+  }
+}
+
+.toggle {
+  
+  text-align: center;
+  height: 90px;
+  width: 90px;
+  border-radius: 50%;
+  position: absolute;
+  margin: auto;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+}
+.element {
+  background-color: #CCC;
+  text-align: center;
+  height: 90px;
+  width: 90px;
+  border-radius: 50%;
+  border: 1px solid #000;
+  position: absolute;
+  margin: auto;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+}
+
+
+.menu {
+  background-color: white;
+  height: 100px;
+  width: 100px;
+  transform: scale(3);
+  border-radius: 50%;
+  border-style: double;
+  border-color: #c87f8a;
+  position: absolute;
+  margin: auto;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  z-index: -1;
+  transition: 0.7s;
+}
+
+a {
+  display: inline-block;
+  position: absolute;
+  font-size: 15px;
+  color: #BBBBBB;
+}
+
+a:nth-child(1){
+  top: 6px;
+  left: 45px;
+}
+
+a:nth-child(2){
+  top: 24px;
+  left: 77px;
+}
+
+a:nth-child(3){
+  top: 58px;
+  left: 76px;
+}
+
+a:nth-child(4){
+  top: 78px;
+  left: 42px;
+}
+
+a:nth-child(5){
+  top: 58px;
+  left: 10px;
+}
+
+a:nth-child(6){
+  top: 23px;
+  left: 12px;
+}
+
+a:hover {
+  color: #c87f8a;
+}
+.my-node-enter {
+  opacity: 0;
+}
+.my-node-enter-active {
+  opacity: 1;
+  transition: opacity 200ms;
+}
+.my-node-exit {
+  opacity: 1;
+}
+.my-node-exit-active {
+  opacity: 0;
+  transition: opacity 200ms;
+}
+
+#notifications{
+  position: fixed;
+	top: 15px;
+	right: 15px;
+	width: 500px;
+	max-width: calc(100% - 30px);
+}
+
+.notification {
+	background-color: #fff;
+	border-radius: 5px;
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+	color: #fff;
+	font-size: 16px;
+	padding: 15px 20px;
+	line-height: 20px;
+	margin-bottom: 15px;
+	animation: grow 0.3s ease-in forwards;
+}
+
+@keyframes grow {
+	from {
+		opacity: 0;
+		transform: scale(0.8);
+	}
+	to {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+
+.notification.hide {
+	animation: shrink 0.3s ease-out forwards;
+}
+
+@keyframes shrink {
+	to {
+		opacity: 0;
+		transform: scale(0.8);
+	}
+}
+
+.notification strong {
+	font-size: 12px;
+	line-height: 20px;
+	letter-spacing: 0.5px;
+	text-transform: uppercase;
+}
+
+.notification-info {
+	background-color: #00cae3;
+}
+
+.notification-success {
+	background-color: #55b559;
+}
+
+.notification-warning {
+	background-color: #ff9e0f;
+}
+
+.notification-danger {
+	background-color: #f55145;
+}
