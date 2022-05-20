@@ -1,16 +1,16 @@
 # ifCloud
-Simulador de rede e gerenciador de Nuvem desenvolvido em React e NodeJS
+Network Simulator developed in React e NodeJS and OpenStal as a Cloud Manager
 
-Em desenvolvimento por André Olive como parte do TCC para o curso de Redes de Computadores do IFC Campus avançado de Sombrio
+Under development by André Olive. ifCloud is my Final paper in Computer Network course.
 
-Esse simulador usa o Openstack como base para gerenciar as máquinas e redes virtuais.
-O ifCloud está sendo desenvolvido para fins educativos
+This simulator uses Openstack as Cloud Manager to management virtual machines and virtual networks.
+The ifClou is being developed for educational purposes.
 
-Página de login
+Login Page
 ![](/frontend/imgs/logonpage.png)
 
-Página Principal
+Main Page
 ![](/frontend/imgs/mainpage.png)
 
-Configurações do dispositivo
+Settings Page
 ![](/frontend/imgs/configpage.png)
