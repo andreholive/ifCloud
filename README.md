@@ -1,5 +1,5 @@
 # ifCloud
-Network Simulator developed in React e NodeJS and OpenStal as a Cloud Manager
+Network Simulator developed in React e NodeJS and OpenStack as a Cloud Manager
 
 Under development by André Olive. ifCloud is my Final paper in Computer Network course.
 
